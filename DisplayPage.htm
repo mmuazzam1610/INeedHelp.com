@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" /> <!-- utf-8 is acharacter encoding capable of encoding all possible characters (called code points) in Unicode-->
+    <title>Display Video</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="projectDesign.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!--for search icon, google sheet-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--Awesome font-->
+    <script src="projectJavascript.js"></script>
+</head>
+<body style="background:url(video.jpg) no-repeat center center fixed; background-size: cover">
+
+    <div class=" col-12 nav-bar">
+        <ul >
+          <a class="right" href="search.html"><span class="material-icons">&#xe8b6;</span></a>
+          <a class="right" href="login.htm"><li>Log Out</li></a>
+          <a class="right" href="profile.htm"><li>Profile</li></a>
+          <a class="right" href="about.html"><li>About</li></a>
+          <a class="right" href="index.html"><li>Home</li></a>
+        </ul>
+    </div> 
+
+    <div class="m-nav-bar">
+        <ul >
+          <a class="right" href="search.html"><li class="material-icons">&#xe8b6;</li></a>
+          <a class="left" href="#" onclick="openNav()"><li class="fa fa-navicon"></li></a>
+        </ul>
+    </div> 
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Profile</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <div class="row"></div>
+
+    <div class="video-holder">
+        <iframe src="https://www.youtube.com/embed/vSakoBvdIvU"></iframe>
+
+        <div class="row"></div>
+
+        <div class="options-wrapper">
+            
+            <div class="options-holder left">
+                <button type="button" name="upvote" value="upvote" class="fa fa-thumbs-o-up"></button>
+            </div>
+            <div class="options-holder left">
+                    <button type="button" name="downvote" value="downvote" class="fa fa-thumbs-o-down"></button>
+            </div>
+            <div class="options-holder left">
+                    <button type="button" name="save" value="save" class="fa fa-star-o"></button>
+            </div>
+
+            
+            <div class="options-holder right">
+                    <button type="button" name="facebook" value="facebook" class="fa fa-facebook-f"></button>
+            </div>
+            <div class="options-holder right">
+                    <button type="button" name="twitter" value="twitter" class="fa fa-twitter"></button>
+            </div>
+            <div class="options-holder right">
+                    <button type="button" name="pinterest" value="pinterest" class="fa fa-pinterest-p"></button>
+            </div>
+            <div class="right"><h4> Share: </h4></div> 
+
+    </div>
+
+</body>
+</html>

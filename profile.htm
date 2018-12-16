@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" /> <!-- utf-8 is acharacter encoding capable of encoding all possible characters (called code points) in Unicode-->
+    <title>Profile Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="projectDesign.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!--for search icon, google sheet-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--Awesome font-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="backgroundanim.js"></script>
+</head>
+<body>
+
+    <div class=" col-12 nav-bar" style="position: relative;">
+        <ul >
+          <a class="right" href="search.html"><span class="material-icons">&#xe8b6;</span></a>
+          <a class="right" href="login.htm"><li>Log Out</li></a>
+          <a class="right" href="about.html"><li>About</li></a>
+          <a class="right" href="index.html"><li>Home</li></a>
+        </ul>
+    </div> 
+
+    <div class="m-nav-bar" style="position: inherit;">
+        <ul >
+          <a class="right" href="#"><li class="material-icons">&#xe8b6;</li></a>
+          <a class="left" href="#" onclick="openNav()"><li class="fa fa-navicon"></li></a>
+        </ul>
+    </div>
+
+    <div class="feature" id="prof"></div>
+    
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Search</a>
+        <a href="#">Profile</a>
+        <a href="#">Sign Out</a>
+    </div>
+ 
+    
+    <div class="row"></div>
+
+    <!-- -------------------------------------------------------- -->
+
+    <div class="row"></div>
+
+    
+    <div class="profile-info">
+
+        <div class="photo">
+            <img src="images/profile.jpg">
+        </div>
+        
+        
+        <div class="m-uploads">
+                <button class="material-icons" name="video">&#xe63a;</button>
+                <button class="fa fa-magic" name="tutorial" ></button>
+                <button class="fa fa-cloud-upload" name="add-new" onclick="window.location.href='create.html'" ></button>
+                <button class="fa fa-group" name="following" ></button>
+        </div>
+
+
+        <div class="personal-info col-m-12">
+            <div class="name">Jane Doe</div>
+            <div class="email">mariaahmed97@hotmail.com</div>
+        </div>
+
+        <div class="uploads">
+            <button name="video"><span class="material-icons" >&#xe63a;</span> Videos - 5 </button>
+            <button class="fa fa-magic" name="tutorial" >   Created - 10</button>
+            <button class="fa fa-cloud-upload" name="add-new" onclick="window.location.href='create.html'" >  Add new</button>
+            <div class="s-following" >
+                <button class="fa fa-group" name="following" > Following </button>
+            </div>
+        </div>
+
+        <div class="row"></div>
+
+        <div class="page-content">
+
+            <div class="tutorials">
+                <div class="topics-follow">
+                    <h2>From topic you follow</h2>
+
+                    <div class="holder">
+                        <a href="DisplayPage.htm">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2ErRDtqhuJynbPfv_XcWle4SLlJcOpOMyAmo8pHviH_FM4GDTTw">
+                            <h6 id="holder-text">Guitar</h6>
+                        </a>
+                    </div>
+
+                    <div class="holder">
+                            <a href="#">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSagSWnNdlaSPclsYmlt48NQmWCL2jPV0HekzYAsEvT-Yl29nq_">
+                                <h6 id="holder-text">Piano</h6>
+                            </a>
+                    </div>
+
+                    <div class="holder">
+                            <a href="#">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfC3ne492GeEOizwFksYGgLp--rWvJ3xpAnraOjhgF3N83Z0G8">
+                                <h6 id="holder-text">Flute</h6>
+                            </a>
+                    </div>
+
+                    <div class="holder">
+                            <a href="#">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX50mfdRmiljnHzNO8z7A4kMzI24G3QL1af8xKDgl-8_6Ls_YZ">
+                                <h6 id="holder-text">Cupcakes</h6>
+                            </a>
+                    </div>
+                    
+                </div>
+
+                <div class="row"></div>
+
+                <div class="saved">
+
+                    <h2>Saved Tutorials</h2>
+
+                    <div class="holder">
+                        <a href="#">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2ErRDtqhuJynbPfv_XcWle4SLlJcOpOMyAmo8pHviH_FM4GDTTw">
+                            <h6 id="holder-text">Guitar</h6>
+                        </a>
+                    </div>
+
+                    <div class="holder">
+                            <a href="#">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSagSWnNdlaSPclsYmlt48NQmWCL2jPV0HekzYAsEvT-Yl29nq_">
+                                <h6 id="holder-text">Piano</h6>
+                            </a>
+                    </div>
+
+                    <div class="holder">
+                            <a href="#">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfC3ne492GeEOizwFksYGgLp--rWvJ3xpAnraOjhgF3N83Z0G8">
+                                <h6 id="holder-text">Flute</h6>
+                            </a>
+                    </div>
+
+                    <div class="holder">
+                            <a href="#">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX50mfdRmiljnHzNO8z7A4kMzI24G3QL1af8xKDgl-8_6Ls_YZ">
+                                <h6 id="holder-text">Flute</h6>
+                            </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="following col-3">
+                <h2>People You Follow</h2> 
+                <a href="#"> Person 1</a>
+                <a href="#"> Person 2</a>
+                <a href="#"> Person 3</a>
+                <a href="#"> Person 4</a>
+                <a href="#"> Person 5</a>
+            </div>
+        </div>
+
+
+    </div>
+
+    
+
+
+
+</body>
+</html>

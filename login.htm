@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" /> <!-- utf-8 is acharacter encoding capable of encoding all possible characters (called code points) in Unicode-->
+    <title>Log In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="projectDesign.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!--for search icon, google sheet-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--Awesome font-->
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+	<script src="firebase_init.js"></script>
+	<script src="login.js"></script>
+
+
+</head>
+<body style="background:url(images/keyboard.jpg) no-repeat center center fixed; background-size: cover">
+
+    <div class=" col-12 nav-bar" style="position:unset">
+        <ul >
+          <a class="right" href="search.html"><span class="material-icons">&#xe8b6;</span></a>
+          <a class="right" href="SignUp.htm"><li>Sign Up</li></a>
+          <a class="right" href="about.html"><li>About</li></a>
+          <a class="right" href="index.html"><li>Home</li></a>
+        </ul>
+    </div> 
+
+    <div class="m-nav-bar">
+        <ul >
+          <a class="right" href="search.html"><li class="material-icons">&#xe8b6;</li></a>
+          <a class="left" href="#" onclick="openNav()"><li class="fa fa-navicon"></li></a>
+        </ul>
+    </div> 
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">SignUp</a>
+    </div>
+
+    <div class="row"></div>
+
+    <div class="limiter">
+            <div class="container-login100">
+                <div class="wrap-login100">
+                    <span class="login100-form-title">
+                        Welcome!
+                    </span>
+                    <form class="login100-form" id='loginForm'>
+    
+                        <div class="wrap-input100" data-validate = "Enter username">
+							<span class="fa fa-user" id="usericon" ></span>
+                            <input class="input100" type="text" name="email" placeholder="Email" id='email' >
+                        </div>
+    
+                        <div class="wrap-input100" data-validate="Enter password">
+                                <span class="fa fa-lock" id="usericon" ></span>
+                            <input class="input100" type="password" name="pass" placeholder="Password" id='pass'>
+                        </div>
+
+                        <div  class="forgot" data-validate="">
+                                <a href="#">Fogot Password ?</a>
+                        </div>
+
+                        <div  class="remember" data-validate="">
+                                <input type="checkbox" name="remember-username" value="rem-user">
+                                Remember my username<br>
+                        </div>
+    
+                        <div class="container-login100-form-btn">
+                            <button class="login100-form-btn" onclick="signIn()">
+                                Login
+                            </button>
+                        </div>
+    
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    <!-- <div class="container col-6">
+        <div class="welcome">Welcome!</div>
+        <div class="today">Today will be great</div>
+        <div class="username">username</div>
+        <div class="password">password</div>
+        <div class="remember">remember username</div>
+        <div class="forgot">forgot pasword</div>
+        <div class="btn"><button>login</button></div>
+
+    </div> -->
+    
+</body>
+</html>
