@@ -425,7 +425,6 @@ footer{
 	transform: translate(-50%, 0%);
 	transition-duration: 0s;
 	background: #18020c;
-	padding: 0 20px;
 }
 
 #searchbar{
@@ -437,8 +436,8 @@ footer{
 	border: none;
 	color: #e5ffde;
 	font-size: 16px;
-	width: 90%;
-	padding: 20px 0;
+	width: 85%;
+	padding: 20px;
 }
 
 #searchbutton{
