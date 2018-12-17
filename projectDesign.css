@@ -1114,14 +1114,10 @@ pre{
 	color: #18020c;
 }
 
-/* delete and see changes!!!!!!! */
-.submit_vid_btn_container{
-
-}
-
 .title_video{
 	width: 100%;
-	background: #e5ffde; 
+    	background: #e5ffde; 
+    	margin: 11% 0%;
 }
 
 .title_video input{
@@ -1132,21 +1128,20 @@ pre{
 	border: 0px;
 	padding: 2%;
 	background: #e5ffde;
-	font-size: 15px;
-	font-weight: 200;
+    	font-size: 165%;
+    	font-weight: 300;
+    	text-align: center;
 }
 
 #submit_video_btn{
     font-family: "Segoe UI",Arial,sans-serif;
     background-color: #e5ffde;
-    font-size: 15px;
-    padding: 3% 15%;
-    border-radius: 15%;
+    padding: 3% 38%;
+    border-radius: 2%;
     position: relative;
-    left: 26%;
     top: 50%;
-    font-weight: 400;
-    font-size: 120%;
+    font-weight: 300;
+    font-size: 150%;
 }
 
 
