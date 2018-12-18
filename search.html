@@ -11,7 +11,7 @@
 
 <body>
 	<div class=" col-12 nav-bar">
-        <ul >
+        <ul>
           <a class="right" href="search.html"><span class="material-icons">&#xe8b6;</span></a>
           <a class="right" href="login.htm"><li>Log Out</li></a>
           <a class="right" href="profile.htm"><li>Profile</li></a>
@@ -32,12 +32,15 @@
 	<div class="feature" id="search"></div>
 	<div class="contents">
 	<div class="searchdiv">
-		<form id="searchform">
-			<input id="searchbar" type="text" placeholder="Search">
-			<button class="material-icons" id="searchbutton" type="submit">&#xe8b6;</button>
-		</form>
+			<input id="searchbar" type="text" onKeyUp="predict()" placeholder="Search" list="tutorials">
+			<datalist id="tutorials">
+        	</datalist>
+			<button class="material-icons" id="searchbutton" onClick="search()">&#xe8b6;</button>
+	</div>
+	<div class="results">
 	</div>
 	</div>
+		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
 	<script>
   // Initialize Firebase
   var config = {
