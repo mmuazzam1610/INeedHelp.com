@@ -12,7 +12,7 @@
 <body>
 	<div class=" col-12 nav-bar">
         <ul >
-          <a class="right" href="search.html"><span class="material-icons">&#xe8b6;</span></a>
+          <a class="right" href="search.html" id=''><span class="material-icons">&#xe8b6;</span></a>
           <a class="right" href="login.htm"><li>Log Out</li></a>
           <a class="right" href="profile.htm"><li>Profile</li></a>
           <a class="right" href="about.html"><li>About</li></a>
@@ -29,16 +29,16 @@
 
 
     <div class="row"></div>
-	<div class="feature" id="search"></div>
+
+    <div class="feature" id="search"></div>
+    
 	<div class="contents">
-	<div class="searchdiv">
-			<input id="searchbar" type="text" onKeyUp="predict()" placeholder="Search" list="tutorials">
-			<datalist id="tutorials">
-        	</datalist>
-			<button class="material-icons" id="searchbutton" onClick="search()">&#xe8b6;</button>
-	</div>
-	<div class="results">
-	</div>
+        <div class="searchdiv">
+                <input id="searchbar" type="text" onKeyUp="predict()" placeholder="Search" list="tutorials">
+                <datalist id="tutorials"></datalist>
+                <button class="material-icons" id="searchbutton" onClick="search()">&#xe8b6;</button>
+        </div>
+        <div class="results"></div>
 	</div>
 	<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
 <script>

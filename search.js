@@ -1,7 +1,10 @@
+//called on keyUp
 function predict(){
 	var list = document.getElementById("tutorials");
 	var text = document.getElementById("searchbar").value.toLowerCase();
 	if (text.length > 3){
+
+        //looks through images node in database
 		firebase.database().ref('/Images/').once('value').then(function(snapshot) {
 			snapshot.forEach(function(childSnapshot) {
 				var pos = childSnapshot.key.toLowerCase().search(text);
@@ -20,7 +23,9 @@ function predict(){
 					}
 				}
 			});
-		});
+        });
+        
+        //looks through images node in database
 		firebase.database().ref('/Videos/').once('value').then(function(snapshot) {
 			snapshot.forEach(function(childSnapshot) {
 				var pos = childSnapshot.child("title").val().toLowerCase().search(text);
@@ -43,7 +48,7 @@ function predict(){
 	}
 }
 
-
+// called on buttonclicked
 function search(){
 	var url;
 	var resultDiv = document.getElementsByClassName("results");
