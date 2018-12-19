@@ -474,6 +474,16 @@ input:-moz-placeholder { color: #555555;}
 input::-moz-placeholder { color: #555555;}
 input:-ms-input-placeholder { color: #555555;}
 
+.contents .results{
+    margin: 30% 0% 0% 0%;
+    padding: 0% 20%;
+}
+
+#aResult #title {
+    padding: 2%;
+    text-align: center;
+    font-size: 240%;
+}
 
 /*---------------------------------------------*/
 button {
