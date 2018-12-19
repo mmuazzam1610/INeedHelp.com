@@ -89,7 +89,7 @@ function search(){
 			if (pos !== -1){
 				var div = document.createElement('div');
 				div.setAttribute('id', 'aResult');
-				var img = document.createElement('img');
+				var img = document.createElement('video');
 				img.setAttribute('src', childSnapshot.child('url').val());
 				div.appendChild(img);
 				var title = document.createElement('div');
