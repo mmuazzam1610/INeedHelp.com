@@ -34,7 +34,7 @@ $(document).ready(function(){
                 $(".options-wrapper").append("<div class='options-holder left'><button class='fa fa-star'></button></div>");
             }else
             {
-                $(".options-wrapper").append("<div class='options-holder left'><button class='fa fa-star-o onclick()='javascript:toggleStar()''></button></div>");
+                $(".options-wrapper").append("<div class='options-holder left'><button class='fa fa-star-o' onClick='javascript:toggleStar()''></button></div>");
             }
             return;
         }
