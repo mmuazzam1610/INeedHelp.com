@@ -18,5 +18,5 @@ function writeUserData(userId, name, email) {
     	username: name,
     	email: email
   	});
-	alert(userId);
+	window.location("categories.htm");
 }

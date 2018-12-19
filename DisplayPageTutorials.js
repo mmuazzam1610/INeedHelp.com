@@ -3,7 +3,7 @@ var myTopic = localStorage.topic;
 $(document).ready(function(){
 
     var heading = document.createElement("h1");
-    heading.innerHTML = 'Electronic Life Hacks';
+    heading.innerHTML = myTopic;
     $('#tutorial_table_heading').append(heading);
     
 

@@ -1,11 +1,10 @@
 var myTopic;
 localStorage.topic;
 
-$('#myHref').on('click', function myFunc(t) {
-  alert("inside onclick");
+function myFunc(t) {
   localStorage.topic = t;
-  window.location = "DisplayPageTutorial.htm";
-});
+  window.location = "DisplayPageTutorials.htm";
+}
 
 $(document).ready(function(){
     
@@ -36,10 +35,13 @@ $(document).ready(function(){
             break;
         }
         var elem = myURL;
-      $("#recent_tutorials").append("<a id='myHref' href=''><div class='element'><img src='"+elem+"'><div class='content'>"+childKey+"</div></div></a>");
-      $("#myHref").addEventListener("click", myFunc(childKey));
+      $("#recent_tutorials").append("<a id='myHref' href='javascript:myFunc(\""+childKey+"\")'><div class='element'><img src='"+elem+"'><div class='content'>"+childKey+"</div></div></a>");
       });
-    }); 
+	/*$("#myHref").on("click", function() {
+		  alert(childKey);
+		  myFunc(childKey);
+	  });*/
+  }); 
   
 
   var topWebsitePostsRef = firebase.database().ref().child('Images/').orderByChild('accessed').limitToLast(3);
