@@ -1,3 +1,9 @@
+//called for setting global variable
+function myFunc(key){
+  localStorage.topic = key;
+  window.location = "DisplayPageTutorials.htm";
+}
+
 //called on keyUp
 function predict(){
 	var list = document.getElementById("tutorials");
@@ -62,16 +68,19 @@ function search(){
 						url = childSnapshot1.child("url").val();
 						return true;
 					});
-					//console.log(childSnapshot.key.substr(pos));
+					//console.log(childSnapshot.key);
 					var div = document.createElement('div');
 					div.setAttribute('id', 'aResult');
+					var link = document.createElement('a');
+					link.setAttribute('href', "javascript:myFunc('"+childSnapshot.key+"')");
+					div.appendChild(link);
 					var img = document.createElement('img');
 					img.setAttribute('src', url);
-					div.appendChild(img);
+					link.appendChild(img);
 					var title = document.createElement('div');
 					title.setAttribute('id', 'title');
-					title.innerHTML = childSnapshot.key.substr(pos);
-					div.appendChild(title);
+					title.innerHTML = childSnapshot.key;
+					link.appendChild(title);
 					if (resultDiv[0].childElementCount == 0){
 						resultDiv[0].appendChild(div);
 					}
@@ -89,13 +98,16 @@ function search(){
 			if (pos !== -1){
 				var div = document.createElement('div');
 				div.setAttribute('id', 'aResult');
-				var img = document.createElement('video');
-				img.setAttribute('src', childSnapshot.child('url').val());
-				div.appendChild(img);
+				var link = document.createElement('a');
+				link.setAttribute('href', "javascript:myFunc('"+childSnapshot.child("title").val()+"')");
+				div.appendChild(link);
+				var vid = document.createElement('video');
+				vid.setAttribute('src', childSnapshot.child('url').val());
+				link.appendChild(vid);
 				var title = document.createElement('div');
 				title.setAttribute('id', 'title');
-				title.innerHTML = childSnapshot.child("title").val().substr(pos);
-				div.appendChild(title);
+				title.innerHTML = childSnapshot.child("title").val();
+				link.appendChild(title);
 				if (resultDiv[0].childElementCount == 0){
 						resultDiv[0].appendChild(div);
 				}
