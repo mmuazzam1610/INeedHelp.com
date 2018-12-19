@@ -1,3 +1,5 @@
+var myTopic = localStorage.topic;
+
 $(document).ready(function(){
 
     var heading = document.createElement("h1");
@@ -5,15 +7,15 @@ $(document).ready(function(){
     $('#tutorial_table_heading').append(heading);
     
 
-    var rootRef = firebase.database().ref('Images/Electronic Life Hacks/');
+    var rootRef = firebase.database().ref('Images/'+myTopic+'/');
     rootRef.on("child_added", snap =>{
         var display_pic = snap.child("url").val();
         var step_title = snap.child("title").val();
         var step_explanation = snap.child("explanation").val();
 
-        //console.log("url: " + display_pic);
-        //console.log("Title: " + step_title);
-        //console.log("explain: " + step_explanation);
+        console.log("url: " + display_pic);
+        console.log("Title: " + step_title);
+        console.log("explain: " + step_explanation);
 
         var elem = document.createElement("img");
         elem.src = display_pic;

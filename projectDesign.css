@@ -993,7 +993,6 @@ pre{
     width: 84%;
     font-size: 25px;
     color: white;
-    /* background-color: darkseagreen; */
 }
 
 .video-holder button{
@@ -1001,7 +1000,6 @@ pre{
     margin:6px;
     border-radius: 3px;
     color: white;
-    /* background-color: #644c64; */
 }
 
 
@@ -1116,8 +1114,8 @@ pre{
 
 .title_video{
 	width: 100%;
-    	background: #e5ffde; 
-    	margin: 11% 0%;
+    background: #e5ffde; 
+    margin: 11% 0%;
 }
 
 .title_video input{
@@ -1128,9 +1126,9 @@ pre{
 	border: 0px;
 	padding: 2%;
 	background: #e5ffde;
-    	font-size: 165%;
-    	font-weight: 300;
-    	text-align: center;
+    font-size: 165%;
+    font-weight: 300;
+    text-align: center;
 }
 
 #submit_video_btn{
@@ -1340,10 +1338,11 @@ tr{
         color: #18020c;
     }
 
-#tutorial_table {
+    #tutorial_table {
         width: 100%;
         padding: 2% 1%;
         margin: 5% 0%;
-   }
+    }
+
 
 }
