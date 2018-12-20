@@ -3,7 +3,7 @@ function signIn(){
 	var password = loginForm["pass"].value;
 	var user = firebase.auth().currentUser;
 	if (user) {
-  		alert(user);
+  		alert(user.uid);
 	} else {
 		// No user is signed in.
 		firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
