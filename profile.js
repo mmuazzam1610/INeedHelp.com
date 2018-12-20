@@ -6,12 +6,34 @@ $(document).ready(function(){
 		uploadPhoto(selectedFile);
 	}
 });
-	var curr_user = firebase.auth().currentUser.uid;
-	firebase.database().ref('users/'+curr_user).once('value', function(snapshot){
-		document.getElementsByClassName("name")[0].innerHTML = snapshot.child("username").val();
-		document.getElementsByClassName("email")[0].innerHTML = snapshot.child("email").val();
+
+var curr_user = firebase.auth().currentUser.uid;
+firebase.database().ref('users/'+curr_user).once('value', function(snapshot){
+	document.getElementsByClassName("name")[0].innerHTML = snapshot.child("username").val();
+	document.getElementsByClassName("email")[0].innerHTML = snapshot.child("email").val();
+});
+
+
+firebase.database().ref('users/'+curr_user).once('value', function (snapshot) {
+	snapshot.forEach(function (child) {
+		var container = document.getElementsByClassName("topics-follow")[0];
+		var element = document.createElement('div');
+		element.setAttribute('class', 'element');
+		element.addEventListener("click", function (){
+			element.classList.toggle("active");
+		});
+		var img = document.createElement('img');
+		img.setAttribute('src', 'images/hike.jpg');
+		element.appendChild(img);
+		var content = document.createElement('div');
+		content.setAttribute('class', 'content');
+		content.innerHTML = child.val();
+		element.appendChild(content);
+		container.appendChild(element);
 	});
-	
+});
+
+
 	function uploadPhoto(file){
 		var metadata = {
 				 contentType: 'image'
