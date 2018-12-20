@@ -17,6 +17,12 @@ function writeUserData(userId, name, email) {
 	firebase.database().ref('users/' + userId).set({
     	username: name,
     	email: email
-  	});
-	window.location("categories.htm");
+  	}, function(error){
+		if (error){
+			alert(error);
+		}
+		else{
+			window.location= "categories.htm";
+		}
+	});
 }

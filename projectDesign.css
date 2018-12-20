@@ -65,7 +65,7 @@ video {
     background-color: #ddd;
     color: black;
   }
-  
+
 .nav-bar a.active {
     background-color:#bccccc;
     color: white;
@@ -782,6 +782,10 @@ pre{
             box-shadow: 0 -50px 20px -20px #232323 inset;
 }
 
+.submit_container{
+	text-align: center;
+	padding-bottom: 10%;
+}
 .cat-container{
     width: 100%;
     float:left;
@@ -816,12 +820,12 @@ pre{
     transition: bottom 0.8s ease;
 }
 
-.element:hover > .content{
+.active > .content , .element:hover > .content{
 	bottom:0;
     transition: bottom 0.8s ease;
 }
 
-.element:hover{
+.active,.element:hover{
 	transform: scale(1.1);
 }
 
@@ -853,6 +857,18 @@ pre{
     width: 100%;
     height: 100%;
     border-radius: 2px;
+}
+
+#submit_interests_btn{
+    font-family: "Segoe UI",Arial,sans-serif;
+    color: #e5ffde;
+    padding: 3% 38%;
+    border-radius: 2%;
+    position: relative;
+    top: 50%;
+    font-weight: 300;
+    font-size: 200%;
+	background-color: #18020c;
 }
 
 /* ---------------Profile Page-------------------*/
