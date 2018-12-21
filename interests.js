@@ -7,11 +7,11 @@ firebase.database().ref("/Interests/").once('value', function (snapshot) {
 			element.classList.toggle("active");
 		});
 		var img = document.createElement('img');
-		img.setAttribute('src', 'images/hike.jpg');
+		img.setAttribute('src', child.child("url").val());
 		element.appendChild(img);
 		var content = document.createElement('div');
 		content.setAttribute('class', 'content');
-		content.innerHTML = child.val();
+		content.innerHTML = child.child("name").val();
 		element.appendChild(content);
 		container.appendChild(element);
 	});

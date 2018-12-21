@@ -6,6 +6,16 @@ function myFunc(t) {
   window.location = "DisplayPageTutorials.htm";
 }
 
+function logOut(){
+  localStorage.user = null;
+  firebase.auth().signOut().then(function() {
+    console.log('Signed Out');
+    window.location = 'index.html';
+  }, function(error) {
+    console.error('Sign Out Error', error);
+  });
+}
+
 $(document).ready(function(){
     
   // Initialize Firebase
@@ -18,7 +28,26 @@ $(document).ready(function(){
     messagingSenderId: "847527345531"
   };
   firebase.initializeApp(config);
-
+  console.log(localStorage.user);
+  if (null){
+    console.log(2);
+  }
+  
+  if (localStorage.user != "null"){
+    console.log(1);
+    var elements = document.getElementsByClassName("notUser");
+    var i;
+    for (i=0; i < elements.length; i++){
+      elements[i].style.display = 'none';
+    }
+  }
+  else{
+    var elements = document.getElementsByClassName("user");
+    var i;
+    for (i=0; i< elements.length; i++){
+      elements[i].style.display = 'none';
+    }
+  }
   var recentWebsitePostsRef = firebase.database().ref('Images/').limitToFirst(3);
     recentWebsitePostsRef.once('value', function(snapshot) {
       var myURL;

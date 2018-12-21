@@ -120,6 +120,7 @@ function search(){
 					resultDiv[0].replaceChild(div, resultDiv[0].children[0]);
 				}
 			}
+
 		});
 	});
 }

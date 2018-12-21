@@ -1,32 +1,33 @@
-$(document).ready(function(){
-	document.getElementById("profile_photo").addEventListener('change', handleFileSelect, false);
+
+var curr_user;
+
+	/*document.getElementById("profile_photo").addEventListener('change', handleFileSelect, false);
 	function handleFileSelect(event) {
 		var selectedFile = event.target.files[0];
 		//$("#submit_video_btn").show();
 		uploadPhoto(selectedFile);
-	}
-});
-
-var curr_user = firebase.auth().currentUser.uid;
-firebase.database().ref('users/'+curr_user).once('value', function(snapshot){
-	document.getElementsByClassName("name")[0].innerHTML = snapshot.child("username").val();
-	document.getElementsByClassName("email")[0].innerHTML = snapshot.child("email").val();
-});
-
-
-firebase.database().ref('users/'+curr_user).once('value', function (snapshot) {
+	}*/
+	curr_user = localStorage.user;
+firebase.database().ref("users/"+curr_user.uid+"/Interests/").once('value', function (snapshot) {
 	snapshot.forEach(function (child) {
+		console.log(child.val());
 		var container = document.getElementsByClassName("topics-follow")[0];
 		var element = document.createElement('div');
-		element.setAttribute('class', 'element');
-		element.addEventListener("click", function (){
-			element.classList.toggle("active");
-		});
+		element.setAttribute('class', 'holder');
 		var img = document.createElement('img');
-		img.setAttribute('src', 'images/hike.jpg');
+		firebase.database().ref("Interests/").once('value', function (snapshot1) {
+			snapshot1.forEach('value', function(children) {
+				console.log(children.child("name").val());
+				console.log(child.val());
+				if (children.child("name").val() == child.val()){
+					img.setAttribute('src', children.child("url").val());
+					return true;
+				}
+			});
+		});
 		element.appendChild(img);
-		var content = document.createElement('div');
-		content.setAttribute('class', 'content');
+		var content = document.createElement('h6');
+		content.setAttribute('id', 'holder-text');
 		content.innerHTML = child.val();
 		element.appendChild(content);
 		container.appendChild(element);
@@ -34,6 +35,12 @@ firebase.database().ref('users/'+curr_user).once('value', function (snapshot) {
 });
 
 
+	firebase.database().ref('users/'+curr_user.uid).once('value', function(snapshot){
+		document.getElementsByClassName("name")[0].innerHTML = snapshot.child("username").val();
+		document.getElementsByClassName("email")[0].innerHTML = snapshot.child("email").val();
+		console.log(snapshot.child("username").val());
+	});
+	
 	function uploadPhoto(file){
 		var metadata = {
 				 contentType: 'image'

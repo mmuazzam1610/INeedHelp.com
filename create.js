@@ -1,12 +1,14 @@
 var tutorialTitle;
 var tutorialStep;
 var explain;
+var selectedFile;
+
+function submit(){
+    localStorage.topic = selectedFile;
+    window.location = "DisplayPageTutorials.htm"
+}
 
 $(document).ready(function(){
-
-
-    
-
     //upload title picture
     $(document).ready(function(){
         //$("#submit_video_btn").hide();
