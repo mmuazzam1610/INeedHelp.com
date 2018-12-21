@@ -1,7 +1,12 @@
 //called for setting global variable
-function myFunc(key){
+function myFuncImg(key){
   localStorage.topic = key;
   window.location = "DisplayPageTutorials.htm";
+}
+
+function myFuncVid(key){
+  localStorage.topic = key;
+  window.location = "DisplayPage.htm";
 }
 
 //called on keyUp
@@ -72,7 +77,7 @@ function search(){
 					var div = document.createElement('div');
 					div.setAttribute('id', 'aResult');
 					var link = document.createElement('a');
-					link.setAttribute('href', "javascript:myFunc('"+childSnapshot.key+"')");
+					link.setAttribute('href', "javascript:myFuncImg('"+childSnapshot.key+"')");
 					div.appendChild(link);
 					var img = document.createElement('img');
 					img.setAttribute('src', url);
@@ -99,7 +104,7 @@ function search(){
 				var div = document.createElement('div');
 				div.setAttribute('id', 'aResult');
 				var link = document.createElement('a');
-				link.setAttribute('href', "javascript:myFunc('"+childSnapshot.child("title").val()+"')");
+				link.setAttribute('href', "javascript:myFuncVid('"+childSnapshot.child("title").val()+"')");
 				div.appendChild(link);
 				var vid = document.createElement('video');
 				vid.setAttribute('src', childSnapshot.child('url').val());
